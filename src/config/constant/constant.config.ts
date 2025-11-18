@@ -11,7 +11,4 @@ export const constant = {
     DATABASE_NAME: process.env.DATABASE_NAME,
     MONGO_URL: process.env.DATABASE_URL,
   },
-  BLOCKCHAIN: {
-    DEFAULT_WALLET_ADDRESS: process.env.DEFAULT_WALLET_ADDRESS,
-  },
 };
