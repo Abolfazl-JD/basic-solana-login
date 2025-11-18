@@ -68,7 +68,7 @@ export class UserService {
     await this.userRepository.completeUserIntialField(
       user._id,
       sanitizedUsername,
-      sign.email,
+      sign.email!,
       trimmedUsername,
     );
 

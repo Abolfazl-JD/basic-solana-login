@@ -3,7 +3,6 @@ import { User } from '../entity/user.entity';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { UserStatus } from '../enum/user-status.enum';
-import { generateReferralCode } from 'src/utils/generate-nounce.utils';
 
 @Injectable()
 export class UserRepository {
@@ -29,6 +28,7 @@ export class UserRepository {
       await newUser.save();
       return newUser;
     } catch (error) {
+      console.log('error');
       throw error;
     }
   }
@@ -46,7 +46,7 @@ export class UserRepository {
   async completeUserIntialField(
     userID: Types.ObjectId,
     tgUsername: string,
-    email: any,
+    email: string,
     username: string,
   ) {
     const updatedFields: Partial<User> = {
